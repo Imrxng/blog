@@ -1,4 +1,3 @@
-import Link from 'next/link';
 
 const Nav = () => {
 
@@ -6,9 +5,9 @@ const Nav = () => {
 
     return (
         <nav>
-            <Link href="/" className='linkNav'>Home</Link>
+            <a href="/" className='linkNav'>Home</a>
             <a href="https://imrxng.github.io/portfolio/" className='linkNav'>Over me</a>
-            <Link href="/blogs" className='linkNav'>Blogs</Link>
+            <a href="/blogs" className='linkNav'>Blogs</a>
         </nav>
     );
 };
