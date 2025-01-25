@@ -1,0 +1,368 @@
+@charset "utf-8";
+
+*:where(
+    :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
+  ) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+  all: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+  content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element */
+:where([contenteditable]:not([contenteditable="false"])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+  all: revert;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+html::-webkit-scrollbar {
+  width: 12px;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: var(--secondary-color);
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: var(--detail-color);
+  border-radius: 10px;
+}
+
+:root {
+  --primary-color: #435058;
+  --secondary-color: #848c8e;
+  --detail-color: #dcf763;
+  --font-color: #f1f2ee;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  color: var(--font-color);
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--primary-color);
+  overflow-x: hidden;
+}
+
+header {
+  height: 6rem;
+  padding: 1rem 4rem 1rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.linkNav {
+  transition-duration: 1s;
+}
+
+.linkNav:hover {
+  transition-duration: 1s;
+  color: var(--detail-color);
+}
+
+
+#bigName {
+  font-size: large;
+}
+
+span {
+  color: var(--detail-color);
+}
+
+
+footer {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 15rem;
+  padding-right: 20rem;
+  padding-left: 20rem;
+  height: 8rem;
+}
+#headerDuimFoto {
+  border-radius: 10px;
+  background-color: #848c8e;
+}
+
+#intro {
+  padding: 4rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+#intro > h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+#about {
+  background-color: var(--secondary-color);
+  padding: 3rem 4rem 3rem 4rem;
+}
+
+#about > h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#about > div > p {
+  font-size: 1.1rem;
+  width: 50%;
+}
+
+#about > div > img {
+  border-radius: 10px;
+} 
+
+#about > div  {
+  display: flex;
+  justify-content: space-evenly ;
+  align-items: center;
+}
+
+#why {
+  padding: 3rem 4rem 3rem 4rem;
+}
+
+#why > h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#why > ul {
+  list-style: circle;
+}
+
+#blog {
+  background-color: var(--secondary-color);
+  padding: 3rem 4rem 3rem 4rem;
+}
+
+#blog > h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.fa-brands,
+.fa-solid,
+.fa-regular {
+  font-size: x-large;
+}
+
+.fa-github,
+.fa-linkedin {
+  font-size: xx-large;
+  color: var(--detail-color);
+}
+
+.fa-angles-up {
+  border: var(--detail-color) 1px solid;
+  padding: 10px;
+  border-radius: 50%;
+  color: var(--font-color);
+}
+
+
+#socials {
+  display: flex;
+  gap: 1rem;
+}
+
+#blogPage {
+  padding: 3rem 4rem 3rem 4rem;
+  background-color: var(--secondary-color);
+  min-height: 30rem;
+}
+
+#blogPage > h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+
+#blogs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.5rem;
+}
+
+.blogCard {
+  background-color: var(--primary-color);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+  height: auto;  
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Toevoegen van schaduw voor diepte */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Zachte overgang voor hover */
+}
+
+.blogCard:hover {
+  transform: translateY(-2px); 
+}
+
+.blogCard > h2 {
+  font-size: 1.3rem; /* Grotere lettergrootte voor de titel */
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.blogCard > p {
+  font-size: 1rem;
+}
+
+.blogCard > a {
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+#tags {
+  margin-top: 0.5rem;
+}
+
+#tags, #date {
+  font-size: 0.8rem;
+}
+.blogCard > a:hover {
+  cursor: pointer;
+  color: var(--detail-color);
+  transition-duration: 0.5s;
+}
+
+#blogAdd {
+  margin-top: 3rem;
+  background-color: var(--primary-color);
+  padding: 1rem;
+  border-radius: 10px;
+  position: absolute;
+  top: 7rem;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+#password {
+  background-color: var(--primary-color);
+  padding: 1rem;
+  border-radius: 10px;
+  top: 10rem;
+  left: 15rem;
+  position: absolute;
+}
+
+/* Maak de blogcards responsive */
+@media (max-width: 768px) {
+  .blogCard {
+    width: 100%; /* Maak de kaarten responsief */
+    margin: 1rem 0;
+  }
+}
