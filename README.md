@@ -1,40 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Stage bij Brightest Test Automation
 
-## Getting Started
+Welkom op mijn portfolio voor mijn stage bij **Brightest Test Automation**! In dit project documenteer ik mijn leerproces, de technische uitdagingen die ik ben tegengekomen, en mijn voortgang in het vakgebied van testautomatisering.
 
-First, run the development server:
+## Inhoud van de Website
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 1. **Landingspagina**
+De landingspagina biedt een introductie over mijn stage bij Brightest Test Automation en geeft een overzicht van de doelen van deze website. Hier worden de nieuwste blogposts getoond, zodat je snel kunt zien waar ik momenteel aan werk.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. **Over-pagina**
+Op deze pagina kun je meer te weten komen over mezelf, mijn opleiding en achtergrond. Ook vind je hier een kort overzicht van het bedrijf Brightest Test Automation en mijn rol tijdens de stage.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### 3. **Blogpagina**
+De blogpagina bevat mijn wekelijkse blogposts waarin ik mijn ervaringen en inzichten deel. De posts zijn gecategoriseerd in verschillende tags, zoals:
+- `code`
+- `lessons learned`
+- `wins`
+- `fails`
+- `reflectie`
+- `teambuilding`
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Stageprojecten
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+Tijdens mijn stage heb ik gewerkt aan verschillende technische projecten, waaronder:
+- **Mobiel Event Project**: Automatiseren van tests voor een mobiel platform.
+- **Testframework Verbeteringen**: Optimaliseren van bestaande testomgevingen en processen.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Gebruik van de Website
 
-## Learn More
+Deze website is gebouwd met moderne webtechnologieën en biedt een gebruiksvriendelijke manier om mijn voortgang te volgen. Je kunt eenvoudig navigeren tussen de verschillende pagina's en de blogposts lezen om meer te weten te komen over mijn ervaringen.
 
-To learn more about Next.js, take a look at the following resources:
+## Technologieën
+De website is gebouwd met de volgende technologieën:
+- HTML, CSS, JavaScript
+- React (voor dynamische content)
+- Git voor versiebeheer
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## Contact
+Als je meer wilt weten over mijn werk of mijn stage, aarzel dan niet om contact met mij op te nemen via de [Over-pagina](#over-pagina) waar je links naar mijn LinkedIn-profiel en andere sociale media kunt vinden.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
