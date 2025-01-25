@@ -31,8 +31,7 @@ Deze website is gebouwd met moderne webtechnologieën en biedt een gebruiksvrien
 
 ## Technologieën
 De website is gebouwd met de volgende technologieën:
-- HTML, CSS, JavaScript
-- React (voor dynamische content)
+- Next.js
 - Git voor versiebeheer
 
 ## Contact
