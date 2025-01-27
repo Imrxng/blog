@@ -129,7 +129,8 @@ body {
   overflow-x: hidden;
 }
 
-p, a {
+p,
+a {
   font-family: "Open Sans", sans-serif;
 }
 
@@ -198,54 +199,54 @@ footer {
   padding: 3rem 4rem;
 }
 
-#about > h2 {
+#about>h2 {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 2rem;
   text-align: center;
 }
 
-#about > h3 {
+#about>h3 {
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   text-align: center;
 }
 
-#about > .content-section {
+#about>.content-section {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   margin-bottom: 2rem;
 }
 
-#about > .content-section > p {
+#about>.content-section>p {
   font-size: 1.1rem;
   width: 50%;
   text-align: justify;
 }
 
-#about > .content-section > img {
+#about>.content-section>img {
   border-radius: 10px;
   width: 150px;
   height: auto;
 }
 
-#about > .content-section > ul {
+#about>.content-section>ul {
   list-style: none;
   padding: 0;
 }
 
-#about > .content-section > ul > li {
+#about>.content-section>ul>li {
   margin: 0.5rem 0;
 }
 
-#about > .content-section > ul > li > a {
+#about>.content-section>ul>li>a {
   text-decoration: none;
   color: var(--primary-color);
 }
 
-#about > .content-section img {
+#about>.content-section img {
   border-radius: 50%;
   width: 150px;
   height: 150px;
@@ -290,7 +291,7 @@ footer {
   justify-content: space-between;
 }
 
-#blog > h1 {
+#blog>h1 {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -481,11 +482,11 @@ footer {
   gap: 1rem;
 }
 
-.textareaInput > label{
+.textareaInput>label {
   padding-top: 0.5rem;
 }
 
-#add-blog > h1 {
+#add-blog>h1 {
   text-align: center;
   font-size: 2rem;
   font-weight: bolder;
@@ -500,7 +501,9 @@ footer {
 }
 
 
-#title, #foto, #categories {
+#title,
+#foto,
+#categories {
   border-radius: 10px;
   padding: 1rem;
   background-color: var(--primary-color);
@@ -534,7 +537,7 @@ footer {
   margin-bottom: 3rem;
 }
 
-#blog-detail-content > div > p {
+#blog-detail-content>div>p {
   text-align: left;
   width: 50%;
 }
@@ -545,9 +548,9 @@ footer {
   border-radius: 10px;
 }
 
-  
 
-#blog-detail-content > div {
+
+#blog-detail-content>div {
   display: flex;
   gap: 5rem;
   align-items: center;
