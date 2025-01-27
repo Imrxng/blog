@@ -129,6 +129,10 @@ body {
   overflow-x: hidden;
 }
 
+p, a {
+  font-family: "Open Sans", sans-serif;
+}
+
 header {
   height: 6rem;
   padding: 1rem 4rem 1rem 4rem;
@@ -191,29 +195,70 @@ footer {
 
 #about {
   background-color: var(--secondary-color);
-  padding: 3rem 4rem 3rem 4rem;
+  padding: 3rem 4rem;
 }
 
-#about>h2 {
-  font-size: 1.5rem;
+#about > h2 {
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   text-align: center;
+}
+
+#about > h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+#about > .content-section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   margin-bottom: 2rem;
 }
 
-#about>div>p {
+#about > .content-section > p {
   font-size: 1.1rem;
   width: 50%;
+  text-align: justify;
 }
 
-#about>div>img {
+#about > .content-section > img {
   border-radius: 10px;
+  width: 150px;
+  height: auto;
 }
 
-#about>div {
+#about > .content-section > ul {
+  list-style: none;
+  padding: 0;
+}
+
+#about > .content-section > ul > li {
+  margin: 0.5rem 0;
+}
+
+#about > .content-section > ul > li > a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+#about > .content-section img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+#overBrightest {
+  margin-bottom: 5rem;
+  width: 74%;
+}
+
+.overBrightestCenter {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 
@@ -231,11 +276,26 @@ footer {
 
 #why>ul {
   list-style: circle;
+  padding-left: 12rem;
 }
 
 #blog {
   background-color: var(--secondary-color);
   padding: 3rem 4rem 3rem 4rem;
+}
+
+#blogList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#blog > h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 #blog>h2 {
@@ -366,8 +426,8 @@ footer {
 
 #pagination {
   display: flex;
-  justify-content: right;
   align-items: center;
+  justify-content: right;
 }
 
 #pagination>p {
@@ -457,6 +517,47 @@ footer {
 
 #errorTekst {
   margin-left: 3rem;
+  margin-top: 1rem;
+}
+
+#blog-detail {
+  background-color: var(--secondary-color);
+  padding: 3rem 4rem 3rem 4rem;
+  min-height: 30rem;
+}
+
+#blog-detail>h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+#blog-detail-content > div > p {
+  text-align: left;
+  width: 50%;
+}
+
+#blog-detail-content {
+  background-color: var(--primary-color);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+  
+
+#blog-detail-content > div {
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+}
+
+.little {
+  font-size: 0.8rem;
+}
+
+#top-margin {
   margin-top: 1rem;
 }
 

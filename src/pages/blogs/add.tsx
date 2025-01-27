@@ -47,7 +47,7 @@ const Add = ({ isLoggedIn }: AddProps) => {
       const blog: Blog = {
         title: title,
         description: description,
-        image: image != "" ? image : undefined,
+        image: image,
         category: categories.split(","),
         date: new Date().toISOString(),
       };
