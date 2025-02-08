@@ -439,7 +439,7 @@ footer {
   color: var(--detail-color);
   position: absolute;
   left: 12.7rem;
-  bottom: 31.3rem;
+  bottom: 44.7rem;
   font-size: x-large;
 }
 
@@ -548,12 +548,14 @@ footer {
   border-radius: 10px;
 }
 
-
-
-#blog-detail-content>div {
+#blog-detail-content> div{
   display: flex;
   gap: 5rem;
   align-items: center;
+}
+
+#blog-detail-content>div > img{
+  height: 500px;
 }
 
 .little {
