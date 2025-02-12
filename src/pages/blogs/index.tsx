@@ -22,15 +22,19 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async (context)
 
   const blogsPerPage = 8;
   const currentPage = parseInt((context.query.page as string) || '1');
-  const totalBlogs = await collection.countDocuments();
+  const selectedCategory = context.query.category as string || '';
+  const categoryFilter = selectedCategory ? { category: selectedCategory } : {};
+
+  const totalBlogs = await collection.countDocuments(categoryFilter);
   const totalPages = Math.ceil(totalBlogs / blogsPerPage);
 
+  const filter = selectedCategory ? { category: selectedCategory } : {};
   const blogs = await collection
-    .find({})
+    .find(filter)
     .skip((currentPage - 1) * blogsPerPage)
     .limit(blogsPerPage)
     .toArray();
-  await client.close();
+  
 
   const { req } = context;
   const cookies = req.headers.cookie || '';
@@ -67,6 +71,25 @@ const Index = ({ blogs, currentPage, totalPages, loggedIn2 }: BlogProps) => {
   const [loggedIn, setLoggedIn] = useState<boolean>(false);
   const [password, setPassword] = useState('');
   const router = useRouter();
+  const currentCategory = router.query.category as string || '';
+  
+  // Nieuwe categorieën
+  const categories = [
+    'Planning',
+    'Product',
+    'Design',
+    'Documentatie',
+    'Communicatie',
+    'Feedback',
+    'Teambuilding',
+    'Strategie',
+    'Onderzoek',
+    'Marketing',
+    'Development',
+    'Support',
+    'Kennisdeling',
+    'Training',
+  ];
 
   const submitHandler: React.KeyboardEventHandler<HTMLInputElement> = async (event) => {
     if (event.key === 'Enter') {
@@ -97,11 +120,19 @@ const Index = ({ blogs, currentPage, totalPages, loggedIn2 }: BlogProps) => {
       window.location.href = `/blogs/?page=${currentPage + 1}`;
     }
   };
-  
+
   const handlePrevPage = () => {
     if (currentPage > 1) {
       window.location.href = `/blogs/?page=${currentPage - 1}`;
     }
+  };
+
+  const handleCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedCategory = event.target.value;
+    const newUrl = selectedCategory 
+      ? `/blogs/?category=${selectedCategory}` 
+      : '/blogs/';
+    window.location.href = newUrl;
   };
 
   return (
@@ -120,16 +151,29 @@ const Index = ({ blogs, currentPage, totalPages, loggedIn2 }: BlogProps) => {
         ) : (
           <FaLock className="lock" />
         )}
-        {
-          !loggedIn && !loggedIn2 && (<input
+        {!loggedIn && !loggedIn2 && (
+          <input
             type="password"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             onKeyDown={submitHandler}
-          />)
-        }
+          />
+        )}
         <h1>Mijn Blogs</h1>
+
+        <div id="categoryFilter">
+          <label htmlFor="category">Filter op categorie: </label>
+          <select  id="category" onChange={handleCategoryChange} defaultValue={currentCategory}>
+            <option value="">Alle categorieën</option>
+            {categories.map((category) => (
+              <option key={category} value={category}  >
+                {category}
+              </option>
+            ))}
+          </select>
+        </div>
+
         <div id="blogs">
           {blogs.length > 0 ? (
             blogs.map((blog) => (
@@ -138,35 +182,29 @@ const Index = ({ blogs, currentPage, totalPages, loggedIn2 }: BlogProps) => {
                 <p>{truncateText(blog.description, 50)}</p>
                 <a href={`/blogs/${blog._id}`}>Lees meer</a>
                 <p id="tags">
-                  <span>Tags:</span> {blog.category.join(', ')}
+                  <span>Tags:</span> {blog.category.map((categorie) =>
+              '#' + categorie + ' '
+            )}
                 </p>
                 <p id="date">Geplaatst op {blog.date}</p>
               </div>
             ))
           ) : (
-            <p>No blogs found</p>
+            <p>Geen blogs gevonden...</p>
           )}
         </div>
-        <div id="pagination" style={{paddingTop: blogs.length <= 4 ? "10rem" : 0}}>
+        <div id="pagination" style={{ paddingTop: blogs.length <= 4 ? '10rem' : 0 }}>
           <p>
-            {currentPage} - {totalPages}
+            {currentPage} - {totalPages === 0 ? 1 : totalPages}
           </p>
           <button onClick={handlePrevPage} disabled={currentPage === 1}>
             <FaCaretLeft
-                key="prevIcon"
-              style={{
-                color: currentPage === 1 ? '#dcf763b8' : '#dcf763',
-                paddingTop: 1,
-              }}
+              style={{ color: currentPage === 1 ? '#dcf763b8' : '#dcf763', paddingTop: 1 }}
             />
           </button>
           <button onClick={handleNextPage} disabled={currentPage === totalPages}>
             <FaCaretRight
-                key="nextIcon"
-              style={{
-                color: currentPage === totalPages ? '#dcf763b8' : '#dcf763',
-                paddingTop: 1,
-              }}
+              style={{ color: currentPage === totalPages ? '#dcf763b8' : '#dcf763', paddingTop: 1 }}
             />
           </button>
         </div>
