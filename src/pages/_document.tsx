@@ -11,7 +11,7 @@ export default function Document() {
         ></script>
         <link
           rel="shortcut icon"
-          href="./icons/portfolio.webp"
+          href="/icons/portfolio.webp"
           type="image/x-icon"
         />
       </Head>
