@@ -434,7 +434,6 @@ footer {
 #pagination>p {
   font-size: 0.8rem;
 }
-
 .lock {
   color: var(--detail-color);
   position: absolute;
