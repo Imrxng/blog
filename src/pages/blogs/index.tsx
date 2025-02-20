@@ -103,7 +103,7 @@ const Index = ({ blogs, currentPage, totalPages, loggedIn2 }: BlogProps) => {
 
       if (response.status === 200) {
         setLoggedIn(true);
-        document.cookie = "loggedIn=true; path=/; max-age=86400; secure; samesite=strict";
+        document.cookie = "loggedIn=true; path=/; max-age=864000; secure; samesite=strict";
         setPassword("");
       }
     }

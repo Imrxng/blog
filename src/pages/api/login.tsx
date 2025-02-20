@@ -8,7 +8,6 @@ const handler = async (
     if (req.method === 'POST') {
         const { password } = req.body;
         const hashedPassword = process.env.ADMIN_PASSWORD as string;
-        console.log(hashedPassword, password);
         
         const isMatch = await bcrypt.compare(password, hashedPassword);
         if (isMatch) {
