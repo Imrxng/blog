@@ -33,6 +33,7 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async (context)
     .find(filter)
     .skip((currentPage - 1) * blogsPerPage)
     .limit(blogsPerPage)
+    .sort({ date: -1 })
     .toArray();
   
 
